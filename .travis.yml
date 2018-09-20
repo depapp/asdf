@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - 8.9.3
+
+cache:
+  directories:
+    - ~/.npm
+    - ~/.cache
+
+before_script:
+  - npm install cypress
+  - npm i --save-dev chance @types/chance
+
+script:
+  - cypress run --spec 'cypress/integration/test.js'
